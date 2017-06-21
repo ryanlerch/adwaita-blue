@@ -1,7 +1,7 @@
-gtk.css: adwaita-blue.scss
+gtk.css:
 	sassc adwaita-blue.scss gtk.css
 
-gtk-dark.css: adwaita-blue-dark.scss
+gtk-dark.css:
 	sassc adwaita-blue-dark.scss gtk-dark.css
 
 gtk3dir=$(datadir)/themes/Adwaita-blue/gtk-3.0
@@ -20,9 +20,13 @@ EXTRA_DIST = \
 	_colors.scss \
 	_drawing.scss \
 	adwaita-blue.scss \
-	adwaita-blue-dark.scss
+	adwaita-blue-dark.scss \
+	_adwaita-blue-overrides.scss
 
 uninstall-hook:
 	-rmdir $(datadir)/themes/Adwaita-blue/gtk-3.0/assets
 	-rmdir $(datadir)/themes/Adwaita-blue/gtk-3.0
 	-rmdir $(datadir)/themes/Adwaita-blue
+
+.PHONY: gtk.css
+.PHONY: gtk-dark.css
