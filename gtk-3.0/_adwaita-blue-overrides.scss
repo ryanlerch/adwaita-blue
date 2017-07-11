@@ -64,6 +64,9 @@ $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40
 
 $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
 
+@import 'drawing';
+
+
 %titlebar,
 headerbar {
   color: $fg_color;
@@ -137,7 +140,13 @@ headerbar {
           -gtk-icon-filter: none;
 
           &:active,
-          &:checked { @include button(backdrop-active); }
+          &:checked {
+            label, & { color: #999 }
+
+            border-color: #aaa;
+            $button_fill: image(#ccc);
+            background-image: $button_fill;
+          }
 
           &:disabled,  {
             background-color:$insensitive_borders_color;
@@ -628,4 +637,8 @@ headerbar {
       }
     }
   }
+}
+
+.titlebar:not(headerbar) {
+  > separator { background-color: $borders_color; }
 }
