@@ -1,4 +1,4 @@
-AC_INIT([adwaita-blue], [0.1])
+AC_INIT([adwaita-blue], [3.22.21.0])
 
 AC_PREFIX_DEFAULT([/usr])
 AC_PROG_MKDIR_P
